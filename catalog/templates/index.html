@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    {% extends "base_generic.html" %}
+    {% block title %} Biblioteca Local {% endblock %}
+
+    {% block content %}
+    <h1>Local Library Home</h1>
+    <p>Bienvenido a la <em>Local Library</em></p>
+    <h2>Contenido dinámico</h2>
+    <p>Tenemos estos registros: </p>
+    <ul>
+        <li><strong>Libros: </strong>{{ num_books }}</li>
+        <li><strong>Copias: </strong>{{ num_instances }}</li>
+        <li><strong>Copias disponibles: </strong>{{ num_instances_available }}</li>
+        <li><strong>Autores: </strong>{{ num_authors }}</li>
+        <li><strong>Generos: </strong>{{ num_generos }}</li>
+        <li><strong>Libros que en el titulo pone el: </strong>{{ num_libros_palabra }}</li>
+    </ul>
+
+    <p>La página se ha visitado un total de {{ num_visitas }} {% if num_visitas == 1 %} vez {% else %} veces {% endif %}</p>
+    {% endblock %}
+</body>
+</html>
